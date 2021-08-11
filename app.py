@@ -12,7 +12,7 @@ import os
 import glob
 import re
 import numpy as np
-from cnn import Resnet9
+from cnn import ResNet9
 #from gevent.pywsgi import WSGIServer
 app = Flask(__name__)
 model = torch.load('cnn.pt',map_location='cpu')
