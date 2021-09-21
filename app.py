@@ -359,5 +359,6 @@ def upload():
     return None
 print('Everything ran')
 if __name__ == '__main__':
+    import Resnet9
     app.run(debug=True)
 
