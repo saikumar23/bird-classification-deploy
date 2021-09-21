@@ -5,7 +5,7 @@ from PIL import Image
 import torch.nn as nn
 from flask import Flask, redirect, url_for, request, render_template
 from torchvision.transforms import transforms
-#from werkzeug.utils import secure_filename
+from werkzeug.utils import secure_filename
 # coding=utf-8
 import sys
 import os
@@ -47,7 +47,7 @@ class ResNet9(nn.Module):
         out = self.res2(out) + out
         out = self.classifier(out)
         return out
-#from gevent.pywsgi import WSGIServer
+from gevent.pywsgi import WSGIServer
 app = Flask(__name__)
 model = ResNet9(3,275)
 model = torch.load('cnn.pt',map_location='cpu')
@@ -359,5 +359,6 @@ def upload():
     return None
 print('Everything ran')
 if __name__ == '__main__':
+    
     app.run(debug=True)
 
